@@ -1,4 +1,6 @@
+import { auth } from "@clerk/nextjs/server";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import {
   ArrowRight,
   BarChart,
@@ -11,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Header from "@/components/Header";
 
 const features = [
   {
@@ -96,9 +99,17 @@ const testimonials = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+
+  const { userId } = await auth();
+  if (userId) {
+    redirect("/dashboard");
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* header section */}
+      <Header isFixed={true} />
       {/* hero section */}
       <section className="px-4 lg:px-8 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto">
