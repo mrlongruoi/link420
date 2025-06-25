@@ -1,0 +1,14 @@
+{
+    "host": "https://api.europe-west2.gcp.tinybird.co",
+    "id": "1161a158-dab6-41ab-ad8c-72f5fd480a83",
+    "name": "mrlongruoi",
+    "scope": "user",
+    "token": "p.eyJ1IjogIjExNjFhMTU4LWRhYjYtNDFhYi1hZDhjLTcyZjVmZDQ4MGE4MyIsICJpZCI6ICIxMjM0MDNjYS1jNGNiLTRhNWItODRkOS0xMWY2YmRjOGI2YTQiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.V3L9rODHUrMDJ9heGTZm8fpdsw5bk--RGUfT4MLrwBU",
+    "tokens": {
+        "https://api.europe-west2.gcp.tinybird.co": "p.eyJ1IjogIjExNjFhMTU4LWRhYjYtNDFhYi1hZDhjLTcyZjVmZDQ4MGE4MyIsICJpZCI6ICIxMjM0MDNjYS1jNGNiLTRhNWItODRkOS0xMWY2YmRjOGI2YTQiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.V3L9rODHUrMDJ9heGTZm8fpdsw5bk--RGUfT4MLrwBU"
+    },
+    "user_email": "mrlong01012020@gmail.com",
+    "user_id": "30e8ce9a-faa1-4798-8a3e-f3d9c046f32f",
+    "user_token": "p.eyJ1IjogIjMwZThjZTlhLWZhYTEtNDc5OC04YTNlLWYzZDljMDQ2ZjMyZiIsICJpZCI6ICI3YzQzMDNhOC01Y2ZlLTRkODItOGZiYi01OTZhYmYwNjdlOWYiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.SFNW5HOXqB3Bme-jBrn2yj5rwE4Ue60ibdN_XK9297A",
+    "version": "0.0.1.dev231"
+}
