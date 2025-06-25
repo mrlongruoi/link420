@@ -1,7 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
 import UsernameForm from "@/components/UsernameForm";
 
-const page = async () => {
+const DashboardPage = async () => {
 
   //chua dong toi cu de vay
   const user = await currentUser();
@@ -25,4 +25,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default DashboardPage;
