@@ -3,6 +3,12 @@
 
 import { ClientTrackingData } from "@/lib/types";
 
+/**
+ * Build a tracking payload from the provided client data, send it to the tracking API, and return the payload.
+ *
+ * @param event - Client-provided tracking data (profileUsername, linkId, linkTitle, linkUrl, optional userAgent and referrer)
+ * @returns The tracking payload that was sent, containing `profileUsername`, `linkId`, `linkTitle`, `linkUrl`, `userAgent`, and `referrer`, or `undefined` if an error occurred
+ */
 export async function trackLinkClick(event: ClientTrackingData) {
   try {
     const trackingData = {

@@ -19,6 +19,15 @@ const formSchema = z.object({
     url: z.string().url("Vui lòng nhập một URL hợp lệ"),
 });
 
+/**
+ * Renders a form for creating a new link, handling validation, submission, and navigation on success.
+ *
+ * The form validates title and URL using the defined Zod schema, displays per-field validation messages,
+ * submits data via the Convex `createLink` mutation inside a transition, and navigates to "/dashboard"
+ * when submission succeeds. Submission errors are shown as a user-facing message.
+ *
+ * @returns The JSX element for the create-link form UI.
+ */
 function CreateLinkForm() {
     const router = useRouter();
 

@@ -34,6 +34,16 @@ interface TinybirdCountryAnalyticsRow {
   percentage: number;
 }
 
+/**
+ * Fetches aggregated analytics for a specific link belonging to a user from Tinybird.
+ *
+ * If Tinybird is not configured, returns a default stub with zeroed metrics. Attempts to retrieve materialized (fast) analytics and falls back to the original analytics endpoint when necessary. Also attempts to include country-level breakdowns when available.
+ *
+ * @param userId - The profile user identifier owning the link
+ * @param linkId - The identifier of the link to fetch analytics for
+ * @param daysBack - Number of past days to include in the results (default: 30)
+ * @returns Aggregated link analytics including totals, daily series (most recent first), and optional country breakdowns, or `null` if no analytics are available or an error occurs
+ */
 export async function fetchLinkAnalytics(
   userId: string,
   linkId: string,

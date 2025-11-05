@@ -5,6 +5,13 @@ import { fetchQuery } from "convex/nextjs";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
+/**
+ * Render the "Create new link" page, enforcing tier-based link limits and showing either the creation form or an upgrade/limit notice.
+ *
+ * Authenticates the user, checks pro/ultra feature flags, fetches the user's current link count, and determines whether the user may create another link based on their tier (free: 3, pro: 10, ultra: unlimited). Renders a full-page limit message with navigation and an upgrade CTA when the limit is reached; otherwise renders the page layout with descriptive content and the CreateLinkForm.
+ *
+ * @returns The page's React element: when allowed, the creation layout with the CreateLinkForm; when not allowed, a full-page limit reached notice with navigation and an upgrade link (if applicable).
+ */
 async function NewLinkPage() {
     const { has, userId } = await auth();
 
