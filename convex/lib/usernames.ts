@@ -26,13 +26,13 @@ export const checkUsernameAvailability = query({
       return {
         available: false,
         error:
-          "Username can only contain letters, numbers, hyphens, and underscores",
+          "Tên người dùng chỉ có thể chứa chữ cái, số, dấu gạch nối và dấu gạch dưới",
       };
     }
     if (args.username.length < 3 || args.username.length > 30) {
       return {
         available: false,
-        error: "Username must be between 3 and 30 characters",
+        error: "Tên người dùng phải từ 3 đến 30 ký tự",
       };
     }
 
@@ -51,7 +51,7 @@ export const setUsername = mutation({
   returns: v.object({ success: v.boolean(), error: v.optional(v.string()) }),
   handler: async ({ db, auth }, args) => {
     const identity = await auth.getUserIdentity();
-    if (!identity) throw new Error("Not authenticated");
+    if (!identity) throw new Error("Chưa được xác thực");
 
     // Validate username format
     const usernameRegex = /^[a-zA-Z0-9_-]+$/;
@@ -59,14 +59,14 @@ export const setUsername = mutation({
       return {
         success: false,
         error:
-          "Username can only contain letters, numbers, hyphens, and underscores",
+          "Tên người dùng chỉ có thể chứa chữ cái, số, dấu gạch nối và dấu gạch dưới",
       };
     }
 
     if (args.username.length < 3 || args.username.length > 30) {
       return {
         success: false,
-        error: "Username must be between 3 and 30 characters",
+        error: "Tên người dùng phải từ 3 đến 30 ký tự",
       };
     }
     // Check if username already taken
@@ -78,7 +78,7 @@ export const setUsername = mutation({
     if (existingUsername && existingUsername.userId !== identity.subject) {
       return {
         success: false,
-        error: "Username is already taken",
+        error: "Tên người dùng đã được sử dụng",
       };
     }
 
@@ -99,6 +99,32 @@ export const setUsername = mutation({
       });
     }
 
-    return {success: true};
+    return { success: true };
+  },
+});
+
+// Get user ID by username/slug (for public page routing)
+export const getUserIdBySlug = query({
+  args: { slug: v.string() },
+  returns: v.union(v.string(), v.null()),
+  handler: async ({ db }, args) => {
+    // First try to find a custom username
+    const usernameRecord = await db
+      .query("usernames")
+      .withIndex("by_username", (q) => q.eq("username", args.slug))
+      .unique();
+
+    if (usernameRecord) {
+      return usernameRecord.userId;
+    }
+
+    // If no custom username found, treat slug as potential clerk ID
+    // We'll need to verify this user actually exists by checking if they have links
+    const links = await db
+      .query("links")
+      .withIndex("by_user", (q) => q.eq("userId", args.slug))
+      .first();
+
+    return links ? args.slug : null;
   },
 });
