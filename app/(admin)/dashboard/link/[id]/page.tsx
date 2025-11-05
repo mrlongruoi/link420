@@ -9,6 +9,12 @@ interface LinkAnalyticsPageProps {
     }>;
 }
 
+/**
+ * Renders the analytics page for a link by resolving route params, ensuring an authenticated user, fetching analytics for the link, and falling back to an empty analytics state when no data exists.
+ *
+ * @param params - A promise that resolves to an object containing the route `id` string for the link.
+ * @returns A React element rendering the LinkAnalytics component with either fetched analytics or a structured empty analytics object when data is unavailable.
+ */
 async function LinkAnalyticsPage({ params }: Readonly<LinkAnalyticsPageProps>) {
     const { id } = await params;
 

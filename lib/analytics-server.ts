@@ -9,6 +9,21 @@ export interface AnalyticsData {
   lastClick: string | null;
 }
 
+/**
+ * Fetches aggregated analytics for a user over a recent time window.
+ *
+ * @param userId - Profile user identifier to query
+ * @param daysBack - Number of days to include in the aggregation window (defaults to 30)
+ * @returns An AnalyticsData object containing:
+ *  - totalClicks: total number of clicks
+ *  - uniqueVisitors: number of unique visitors
+ *  - countriesReached: number of distinct countries reached
+ *  - totalLinksClicked: total number of distinct links clicked
+ *  - topLinkTitle: title of the top link or `null` if unavailable
+ *  - topReferrer: top referrer domain or `null` if unavailable
+ *  - firstClick: timestamp of the first recorded click or `null`
+ *  - lastClick: timestamp of the last recorded click or `null`
+ */
 export async function fetchAnalytics(
   userId: string,
   daysBack: number = 30,

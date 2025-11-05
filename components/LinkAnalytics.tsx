@@ -18,6 +18,18 @@ interface LinkAnalyticsProps {
     analytics: LinkAnalyticsData;
 }
 
+/**
+ * Render an analytics dashboard for a single link, including summary metrics, daily performance,
+ * and country distribution while enforcing access and plan gates.
+ *
+ * Renders an upgrade prompt when the current user lacks analytics access and shows Ultra-only
+ * sections (countries distribution and related metrics) behind a plan gate. When analytics data
+ * is available, displays link header, total clicks, unique users, countries reached, a daily
+ * performance chart (up to 10 days), and a country breakdown (top 20).
+ *
+ * @param analytics - Analytics data for the link (title, url, totals, dailyData, countryData, etc.)
+ * @returns The component tree representing the link analytics UI
+ */
 async function LinkAnalytics({ analytics }: Readonly<LinkAnalyticsProps>) {
     const { has } = await auth();
 

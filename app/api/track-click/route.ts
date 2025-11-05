@@ -4,6 +4,12 @@ import { api } from "@/convex/_generated/api";
 import { ClientTrackingData, ServerTrackingEvent } from "@/lib/types";
 import { getClient } from "@/convex/client";
 
+/**
+ * Handle POST requests to record a client tracking event, enrich it with server-side data, and optionally forward the event to Tinybird.
+ *
+ * @param request - Incoming Next.js request whose JSON body contains the client tracking payload (`ClientTrackingData`)
+ * @returns A JSON response: `{ success: true }` on successful processing; `{ error: "Không tìm thấy hồ sơ" }` with status 404 when the target profile is not found; `{ error: "Không thể theo dõi lượt nhấp" }` with status 500 on internal failure.
+ */
 export async function POST(request: NextRequest) {
   try {
     const data: ClientTrackingData = await request.json();

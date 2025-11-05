@@ -17,6 +17,12 @@ interface DashboardMetricsProps {
     analytics: AnalyticsData;
 }
 
+/**
+ * Render a 30-day analytics overview dashboard with metric cards and optional top-link/referrer details.
+ *
+ * @param analytics - Analytics data used to populate the metric cards and additional sections
+ * @returns A React element containing the analytics overview UI
+ */
 function DashboardMetrics({ analytics }: Readonly<DashboardMetricsProps>) {
     const formatDate = (dateString: string | null) => {
         if (!dateString) return "N/A";

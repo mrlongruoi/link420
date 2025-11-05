@@ -11,6 +11,17 @@ import { Input } from "./ui/input";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 
+/**
+ * Render a draggable, editable list item for a link that provides analytics, edit, and delete actions.
+ *
+ * When edited, the component validates non-empty title and URL, normalizes the URL by prepending
+ * `https://` if no protocol is present, and calls the update mutation. Deletion prompts for user
+ * confirmation before calling the delete mutation.
+ *
+ * @param id - The link record identifier
+ * @param link - The link document containing at least `title` and `url`
+ * @returns The rendered sortable link item element, or `null` when `link` is falsy
+ */
 function SortableItem({ id, link }: { id: Id<"links">, link: Doc<"links"> }) {
     const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id });
 
@@ -182,4 +193,3 @@ function SortableItem({ id, link }: { id: Id<"links">, link: Doc<"links"> }) {
 }
 
 export default SortableItem;
-

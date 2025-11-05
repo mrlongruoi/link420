@@ -39,6 +39,13 @@ const ManageLinks = ({ preloadedLinks }: { preloadedLinks: Preloaded<typeof api.
         })
     );
 
+    /**
+     * Reorders local item IDs after a drag-and-drop interaction and persists the new sequence.
+     *
+     * If the dragged item was moved to a different position, updates component state with the new item ID order and calls `updateLinkOrder` to save the order.
+     *
+     * @param event - Drag end event from dnd-kit containing the `active` (dragged) and `over` (target) items
+     */
     function handleDragEnd(event: DragEndEvent) {
         const { active, over } = event;
 
