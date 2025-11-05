@@ -100,7 +100,7 @@ export const updateCustomizations = mutation({
   returns: v.id("userCustomizations"),
   handler: async ({ db, auth, storage }, args) => {
     const identity = await auth.getUserIdentity();
-    if (!identity) throw new Error("Not authenticated");
+    if (!identity) throw new Error("Chưa được xác thực");
 
     // Check if customizations already exist
     const existing = await db
@@ -151,7 +151,7 @@ export const generateUploadUrl = mutation({
   returns: v.string(),
   handler: async ({ storage, auth }) => {
     const identity = await auth.getUserIdentity();
-    if (!identity) throw new Error("Not authenticated");
+    if (!identity) throw new Error("Chưa được xác thực");
 
     return await storage.generateUploadUrl();
   },
@@ -163,7 +163,7 @@ export const removeProfilePicture = mutation({
   returns: v.null(),
   handler: async ({ db, auth, storage }) => {
     const identity = await auth.getUserIdentity();
-    if (!identity) throw new Error("Not authenticated");
+    if (!identity) throw new Error("Chưa được xác thực");
 
     const existing = await db
       .query("userCustomizations")

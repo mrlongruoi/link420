@@ -6,6 +6,7 @@ import { Preloaded, usePreloadedQuery } from "convex/react";
 import { ArrowUpRight } from "lucide-react";
 import { api } from "@/convex/_generated/api";
 import { Doc } from "@/convex/_generated/dataModel";
+import { trackLinkClick } from "@/lib/analytics";
 
 const Links = ({
   preloadedLinks,
@@ -17,12 +18,12 @@ const Links = ({
   const username = params.username as string;
   const handleLinkClick = async (link: Doc<"links">) => {
     //track the click before navigation
-    // await trackLinkClick({
-    //     profileUsername: username,
-    //     linkId: link._id,
-    //     linkTitle: link.title,
-    //     linkUrl: link.url,
-    // })
+    await trackLinkClick({
+        profileUsername: username,
+        linkId: link._id,
+        linkTitle: link.title,
+        linkUrl: link.url,
+    })
   };
 
   if (links.length === 0) {

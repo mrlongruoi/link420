@@ -27,7 +27,7 @@ const Header = ({ isFixed = false }: { isFixed?: boolean }) => {
               className="inline-flex items-center gap-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
             >
               <Plus className="w-4 h-4" />
-              Add Link
+              Thêm liên kết
             </Link>
             <Button
               asChild

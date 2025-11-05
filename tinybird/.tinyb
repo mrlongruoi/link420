@@ -1,14 +1,14 @@
 {
-    "host": "https://api.europe-west2.gcp.tinybird.co",
-    "id": "1161a158-dab6-41ab-ad8c-72f5fd480a83",
+    "host": "https://api.us-east.aws.tinybird.co",
+    "id": "af5b0078-bd5d-41a1-8eea-2e1fb0174a6b",
     "name": "mrlongruoi",
-    "scope": "user",
-    "token": "p.eyJ1IjogIjExNjFhMTU4LWRhYjYtNDFhYi1hZDhjLTcyZjVmZDQ4MGE4MyIsICJpZCI6ICIxMjM0MDNjYS1jNGNiLTRhNWItODRkOS0xMWY2YmRjOGI2YTQiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.V3L9rODHUrMDJ9heGTZm8fpdsw5bk--RGUfT4MLrwBU",
+    "scope": "workspace",
+    "token": "p.eyJ1IjogImFmNWIwMDc4LWJkNWQtNDFhMS04ZWVhLTJlMWZiMDE3NGE2YiIsICJpZCI6ICJlNzRmZTEwMy00Y2I5LTRjMWUtYmU1Ny1lOTQ2MDI0MDZjMjEiLCAiaG9zdCI6ICJ1cy1lYXN0LWF3cyJ9.Ar0WvE14_Zdkap6Aupe6PteaXC3S3dncwsrx9sUc6ro",
     "tokens": {
-        "https://api.europe-west2.gcp.tinybird.co": "p.eyJ1IjogIjExNjFhMTU4LWRhYjYtNDFhYi1hZDhjLTcyZjVmZDQ4MGE4MyIsICJpZCI6ICIxMjM0MDNjYS1jNGNiLTRhNWItODRkOS0xMWY2YmRjOGI2YTQiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.V3L9rODHUrMDJ9heGTZm8fpdsw5bk--RGUfT4MLrwBU"
+        "https://api.us-east.aws.tinybird.co": "p.eyJ1IjogImFmNWIwMDc4LWJkNWQtNDFhMS04ZWVhLTJlMWZiMDE3NGE2YiIsICJpZCI6ICJlNzRmZTEwMy00Y2I5LTRjMWUtYmU1Ny1lOTQ2MDI0MDZjMjEiLCAiaG9zdCI6ICJ1cy1lYXN0LWF3cyJ9.Ar0WvE14_Zdkap6Aupe6PteaXC3S3dncwsrx9sUc6ro"
     },
     "user_email": "mrlong01012020@gmail.com",
-    "user_id": "30e8ce9a-faa1-4798-8a3e-f3d9c046f32f",
-    "user_token": "p.eyJ1IjogIjMwZThjZTlhLWZhYTEtNDc5OC04YTNlLWYzZDljMDQ2ZjMyZiIsICJpZCI6ICI3YzQzMDNhOC01Y2ZlLTRkODItOGZiYi01OTZhYmYwNjdlOWYiLCAiaG9zdCI6ICJnY3AtZXVyb3BlLXdlc3QyIn0.SFNW5HOXqB3Bme-jBrn2yj5rwE4Ue60ibdN_XK9297A",
-    "version": "0.0.1.dev231"
+    "user_id": "f88294f2-737a-4024-9b09-21e222f21749",
+    "user_token": "p.eyJ1IjogImY4ODI5NGYyLTczN2EtNDAyNC05YjA5LTIxZTIyMmYyMTc0OSIsICJpZCI6ICJkNDhjMjhjNS05Zjg1LTQxMjYtODY5NS1iYTY2YzFkMTAzMGUiLCAiaG9zdCI6ICJ1cy1lYXN0LWF3cyJ9.7_rFNCmUCYwrOPAbjKjwobeLFRIdUC0hcmi260Z1XT8",
+    "version": "0.0.1.dev312"
 }
